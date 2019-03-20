@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LoanCalculator.Calculator">
+    <ContentPage.Content>
+
+        <StackLayout Margin="10">
+            <Label HorizontalOptions="Center" Text="Simple loan calculator" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Text="Enter the loan amount" Grid.Row="0" Grid.Column="0" />
+                <Entry x:Name="loan_amount" Text="10000" Keyboard="Numeric" Placeholder="Loan amount" Grid.Row="0" Grid.Column="1" />
+
+                <Label Text="Enter the duration (months)" Grid.Row="1" Grid.Column="0" />
+                <Entry x:Name="duration" Text="60" Keyboard="Numeric" Placeholder="Duration" Grid.Row="1" Grid.Column="1" />
+
+                <Label Text="Enter the interest rate (yearly)" Grid.Row="2" Grid.Column="0" />
+                <Entry x:Name="interest" Text="9" Keyboard="Numeric" Placeholder="Interest" Grid.Row="2" Grid.Column="1" />
+                
+            </Grid>
+
+
+            <Button Text="Calculate loan" Clicked="CalculateLoanAsync"/>
+        </StackLayout> 
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.489
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoanCalculator.Android", "LoanCalculator\LoanCalculator.Android\LoanCalculator.Android.csproj", "{F4282CFD-73D0-40D7-85C3-C7DDC0EDCA97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoanCalculator", "LoanCalculator\LoanCalculator\LoanCalculator.csproj", "{34CD8B15-186C-4E86-8DEB-4E5317FA3132}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F4282CFD-73D0-40D7-85C3-C7DDC0EDCA97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4282CFD-73D0-40D7-85C3-C7DDC0EDCA97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4282CFD-73D0-40D7-85C3-C7DDC0EDCA97}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F4282CFD-73D0-40D7-85C3-C7DDC0EDCA97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4282CFD-73D0-40D7-85C3-C7DDC0EDCA97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4282CFD-73D0-40D7-85C3-C7DDC0EDCA97}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{34CD8B15-186C-4E86-8DEB-4E5317FA3132}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34CD8B15-186C-4E86-8DEB-4E5317FA3132}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34CD8B15-186C-4E86-8DEB-4E5317FA3132}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{34CD8B15-186C-4E86-8DEB-4E5317FA3132}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34CD8B15-186C-4E86-8DEB-4E5317FA3132}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34CD8B15-186C-4E86-8DEB-4E5317FA3132}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {58B9CC14-4A0B-4A1A-8C32-33F337224B85}
+	EndGlobalSection
+EndGlobal
