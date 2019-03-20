@@ -4,22 +4,32 @@
              x:Class="LoanCalculator.Result">
     <ContentPage.Content>
         <StackLayout>
-            
+
             <ListView ItemsSource="{Binding AmortizationDetails}">
                 <ListView.Header>
-                    <StackLayout BackgroundColor="Blue" Orientation="Horizontal">
-                        <Label Text="Month" />
-                        <Label Text="Interest" />
-                        <Label Text="Principal"/>
-                        <Label Text="Balance"/>
-                    </StackLayout>
-                    
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*"/>
+                            <ColumnDefinition Width="0.5*"/>
+                            <ColumnDefinition Width="0.5*"/>
+                            <ColumnDefinition Width="0.5*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Text="Month" />
+                        <Label Grid.Column="1" Text="Interest" />
+                        <Label  Grid.Column="2" Text="Principal"/>
+                        <Label  Grid.Column="3" Text="Balance"/>
+                    </Grid>
                 </ListView.Header>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <Grid>
-                                <!--<Label Text="{Binding Month}" FontAttributes="Bold" />-->
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.5*"/>
+                                    <ColumnDefinition Width="0.5*"/>
+                                    <ColumnDefinition Width="0.5*"/>
+                                    <ColumnDefinition Width="0.5*"/>
+                                </Grid.ColumnDefinitions>
                                 <Label TextColor="Black" Grid.Column="0" Text="{Binding Month}"  />
                                 <Label TextColor="Black" Grid.Column="1" Text="{Binding Interest}" />
                                 <Label TextColor="Black" Grid.Column="2" Text="{Binding Principal}"  />
