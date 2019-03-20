@@ -4,22 +4,35 @@
              x:Class="LoanCalculator.Result">
     <ContentPage.Content>
         <StackLayout>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Grid.Row="0" Text="Amount" />
+                <Label Grid.Column="1" Grid.Row="0" Text="Duration" />
+                <Label Grid.Column="2" Grid.Row="0" Text="Interest" />
+                
+                <Label Grid.Column="0" Grid.Row="1" Text="value" />
+                <Label Grid.Column="1" Grid.Row="1" Text="Value" />
+                <Label Grid.Column="2" Grid.Row="1" Text="value" />
+            </Grid>
+            
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Text="Month" />
+                <Label Grid.Column="1" Text="Interest" />
+                <Label  Grid.Column="2" Text="Principal"/>
+                <Label  Grid.Column="3" Text="Balance"/>
+            </Grid>
 
             <ListView ItemsSource="{Binding AmortizationDetails}">
-                <ListView.Header>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="0.5*"/>
-                            <ColumnDefinition Width="0.5*"/>
-                            <ColumnDefinition Width="0.5*"/>
-                            <ColumnDefinition Width="0.5*"/>
-                        </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0" Text="Month" />
-                        <Label Grid.Column="1" Text="Interest" />
-                        <Label  Grid.Column="2" Text="Principal"/>
-                        <Label  Grid.Column="3" Text="Balance"/>
-                    </Grid>
-                </ListView.Header>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
