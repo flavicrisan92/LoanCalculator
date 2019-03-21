@@ -3,9 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LoanCalculator.Calculator">
     <ContentPage.Content>
-
-        <StackLayout Margin="10">
-            <Label HorizontalOptions="Center" Text="Simple loan calculator" />
+        <StackLayout Margin="5">
+            <!--<Label HorizontalOptions="Center" Text="Simple loan calculator" />-->
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
@@ -23,11 +22,27 @@
 
                 <Label Text="Enter the interest rate (yearly)" Grid.Row="2" Grid.Column="0" />
                 <Entry x:Name="interest" Text="9" Keyboard="Numeric" Placeholder="Interest" Grid.Row="2" Grid.Column="1" />
-                
             </Grid>
+            <Button Text="Calculate loan" Clicked="Button_Clicked"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Grid.Row="0" Text="Montly Payment"/>
+                <Label Grid.Column="0" Grid.Row="1" Text="Total Payment" />
+                <Label Grid.Column="0" Grid.Row="2" Text="Total Interest" />
 
-
-            <Button Text="Calculate loan" Clicked="CalculateLoanAsync"/>
+                <Label Grid.Column="1" Grid.Row="0" Text="{Binding MonthlyPayment}" Font="Bold" />
+                <Label Grid.Column="1" Grid.Row="1" Text="{Binding TotalPayment}" Font="Bold" />
+                <Label Grid.Column="1" Grid.Row="2" Text="{Binding TotalInterestPaid}" Font="Bold" />
+            </Grid>
+            <Button Text="Amortization table" Clicked="AmortizationTableAsync"/>
         </StackLayout> 
     </ContentPage.Content>
 </ContentPage>

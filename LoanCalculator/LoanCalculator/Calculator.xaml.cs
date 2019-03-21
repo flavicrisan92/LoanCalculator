@@ -1,4 +1,5 @@
 ﻿using LoanCalculator.Models;
+using LoanCalculator.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,15 +11,21 @@ using Xamarin.Forms.Xaml;
 
 namespace LoanCalculator
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Calculator : ContentPage
-	{
-		public Calculator ()
-		{
-			InitializeComponent ();
-		}
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class Calculator : ContentPage
+    {
 
-        public async void CalculateLoanAsync(object sender, EventArgs e)
+        public AmortizationDetailsViewModel AmortizationDetails { get; private set; }
+
+        public Calculator()
+        {
+            InitializeComponent();
+            //AmortizationDetails = new AmortizationDetailsViewModel(loanDetails);
+
+            //BindingContext = AmortizationDetails;
+        }
+
+        public async void AmortizationTableAsync(object sender, EventArgs e)
         {
             try
             {
@@ -29,15 +36,21 @@ namespace LoanCalculator
                 LoanDetailsModel loanDetails = new LoanDetailsModel()
                 {
                     LoanAmount = _loan_amount,
-                    Duration = _duration,
-                    Interest = _interest
+                    LoanTermMonths = _duration,
+                    InterestRate = _interest
                 };
 
                 await Navigation.PushAsync(new Result(loanDetails));
-            }catch(Exception ex)
-            {
-                var xxx = ex;
             }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+
         }
     }
 }

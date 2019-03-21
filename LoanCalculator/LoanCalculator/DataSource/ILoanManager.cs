@@ -4,8 +4,8 @@ using System.Collections.Generic;
 
 namespace LoanCalculator.DataSource
 {
-    public interface IDataSource
+    public interface ILoanManager
     {
-        AmortizationResult GetResult(LoanDetailsModel loadnDetails);
+        AmortizationResult GenerateFullAmortization();
     }
 }

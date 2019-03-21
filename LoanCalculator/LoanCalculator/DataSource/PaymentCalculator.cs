@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LoanCalculator.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -42,21 +43,11 @@ namespace LoanCalculator.DataSource
         public double LoanTermMonths { get; set; }
 
         /// <summary>
-        /// The term of the loan in years. This is the number of years
-        /// that payments will be made.
-        /// </summary>
-        //public double LoanTermYears
-        //{
-        //    get { return LoanTermMonths / MonthsPerYear; }
-        //    set { LoanTermMonths = value); }
-        //}
-
-        /// <summary>
         /// Calculates the monthy payment amount based on current
         /// settings.
         /// </summary>
         /// <returns>Returns the monthly payment amount</returns>
-        public double CalculatePayment()
+        public double CalculateMonthlyPayment()
         {
             double payment = 0;
 
@@ -70,7 +61,33 @@ namespace LoanCalculator.DataSource
                 }
                 else payment = (LoanAmount / (double)LoanTermMonths);
             }
-            return Math.Round(payment, 2);
+            return payment;
+        }
+
+        public List<AmortizationDetails> GenerateAmortization()
+        {
+            var amortizationDetails = new List<AmortizationDetails>();
+            var balance = LoanAmount;
+            var periods = LoanTermMonths;
+            var monthlyRate = (InterestRate / 100) / 12;
+            var monthyPayment = (monthlyRate / (1 - (Math.Pow((1 + monthlyRate), -(periods))))) * balance;
+
+            for (var i = 1; i <= periods; i++)
+            {
+                var interestForMonth = balance * monthlyRate;
+                var principalForMonth = monthyPayment - interestForMonth;
+                balance += interestForMonth;
+                balance -= monthyPayment;
+
+                amortizationDetails.Add(new AmortizationDetails()
+                {
+                    Month = string.Format("#{0}", i.ToString()),
+                    Interest = Math.Round(interestForMonth, 2),
+                    Balance = Math.Round(balance, 2),
+                    Principal = Math.Round(principalForMonth, 2),
+                });
+            }
+            return amortizationDetails;
         }
     }
 }

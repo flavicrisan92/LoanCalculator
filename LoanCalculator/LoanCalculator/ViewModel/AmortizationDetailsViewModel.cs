@@ -9,10 +9,14 @@ namespace LoanCalculator.ViewModel
 {
     public class AmortizationDetailsViewModel
     {
-        public decimal MonthlyPayment { get; set; }
-        public decimal TotalPayment { get; set; }
-        public decimal TotalInterestPaid { get; set; }
+        public string MonthlyPayment { get; set; }
+        public string TotalPayment { get; set; }
+        public string TotalInterestPaid { get; set; }
         public DateTime PayOffDate { get; set; }
+
+        public string LoanAmount { get; set; }
+        public string LoanTermMonths { get; set; }
+        public string InterestRate { get; set; }
 
         private ObservableCollection<AmortizationDetails> amortizationDetails;
 
@@ -28,14 +32,25 @@ namespace LoanCalculator.ViewModel
         public AmortizationDetailsViewModel(LoanDetailsModel loanDetails)
         {
             AmortizationDetails = new ObservableCollection<AmortizationDetails>();
-            IDataSource dataSource = new MyDataSource();
-            var results = dataSource.GetResult(loanDetails);
+            var results = new LoanManager(loanDetails).GenerateFullAmortization();
+
+            GetAmortizationOverview(loanDetails, results);
+
             foreach (var result in results.AmortizationDetails)
             {
                 AmortizationDetails.Add(result);
-
             }
         }
 
+        private void GetAmortizationOverview(LoanDetailsModel loanDetails, AmortizationResult results)
+        {
+            LoanAmount = loanDetails.LoanAmount.ToString();
+            LoanTermMonths = loanDetails.LoanTermMonths.ToString();
+            InterestRate = string.Format("{0} %", loanDetails.InterestRate.ToString());
+
+            MonthlyPayment = results.AmortizationOverview.MonthlyPayment.ToString();
+            TotalPayment = results.AmortizationOverview.TotalPayment.ToString();
+            TotalInterestPaid = results.AmortizationOverview.TotalInterestPaid.ToString();
+        }
     }
 }

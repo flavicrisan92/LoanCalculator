@@ -10,13 +10,17 @@ namespace LoanCalculator
     public partial class Result : ContentPage
     {
         private LoanDetailsModel loanDetails;
-        
+
+        public AmortizationDetailsViewModel AmortizationDetails { get; private set; }
+
         public Result(LoanDetailsModel loanDetails)
         {
             this.loanDetails = loanDetails;
 
             InitializeComponent();
-            BindingContext = new AmortizationDetailsViewModel(loanDetails);
+            AmortizationDetails = new AmortizationDetailsViewModel(loanDetails);
+            
+            BindingContext = AmortizationDetails;
         }
     }
 }
