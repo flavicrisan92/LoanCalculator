@@ -15,15 +15,15 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Label Text="Enter the loan amount" Grid.Row="0" Grid.Column="0" />
-                <Entry x:Name="loan_amount" Text="10000" Keyboard="Numeric" Placeholder="Loan amount" Grid.Row="0" Grid.Column="1" />
+                <Entry x:Name="loan_amount" TextColor="DarkSlateGray" Keyboard="Numeric" Placeholder="Loan amount" Grid.Row="0" Grid.Column="1" />
 
                 <Label Text="Enter the duration (months)" Grid.Row="1" Grid.Column="0" />
-                <Entry x:Name="duration" Text="60" Keyboard="Numeric" Placeholder="Duration" Grid.Row="1" Grid.Column="1" />
+                <Entry x:Name="duration" TextColor="DarkSlateGray" Keyboard="Numeric" Placeholder="Duration" Grid.Row="1" Grid.Column="1" />
 
                 <Label Text="Enter the interest rate (yearly)" Grid.Row="2" Grid.Column="0" />
-                <Entry x:Name="interest" Text="9" Keyboard="Numeric" Placeholder="Interest" Grid.Row="2" Grid.Column="1" />
+                <Entry x:Name="interest" TextColor="DarkSlateGray" Keyboard="Numeric" Placeholder="Interest" Grid.Row="2" Grid.Column="1" />
             </Grid>
-            <Button Text="Calculate loan" Clicked="Button_Clicked"/>
+            <Button Text="Calculate loan" Clicked="CalculateLoan"/>
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
@@ -34,13 +34,13 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="0" Grid.Row="0" Text="Montly Payment"/>
-                <Label Grid.Column="0" Grid.Row="1" Text="Total Payment" />
-                <Label Grid.Column="0" Grid.Row="2" Text="Total Interest" />
+                <Label Grid.Column="0" TextColor="DarkSlateGray" Grid.Row="0" Text="Montly Payment"/>
+                <Label Grid.Column="0" TextColor="DarkSlateGray" Grid.Row="1" Text="Total Payment" />
+                <Label Grid.Column="0" TextColor="DarkSlateGray" Grid.Row="2" Text="Total Interest" />
 
-                <Label Grid.Column="1" Grid.Row="0" Text="{Binding MonthlyPayment}" Font="Bold" />
-                <Label Grid.Column="1" Grid.Row="1" Text="{Binding TotalPayment}" Font="Bold" />
-                <Label Grid.Column="1" Grid.Row="2" Text="{Binding TotalInterestPaid}" Font="Bold" />
+                <Label Grid.Column="1" Grid.Row="0" TextColor="Black" Text="{Binding MonthlyPayment}" Font="Bold" />
+                <Label Grid.Column="1" Grid.Row="1" TextColor="Black" Text="{Binding TotalPayment}" Font="Bold" />
+                <Label Grid.Column="1" Grid.Row="2" TextColor="Black" Text="{Binding TotalInterestPaid}" Font="Bold" />
             </Grid>
             <Button Text="Amortization table" Clicked="AmortizationTableAsync"/>
         </StackLayout> 

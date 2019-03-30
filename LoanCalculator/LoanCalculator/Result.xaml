@@ -19,17 +19,17 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
-                <Label Grid.Column="0" Grid.Row="0" TextColor="Black" Text="Amount" Font="10" />
-                <Label Grid.Column="1" Grid.Row="0" TextColor="Black" Text="Duration" Font="10" />
-                <Label Grid.Column="2" Grid.Row="0" TextColor="Black" Text="Interest" Font="10" />
+                <Label Grid.Column="0" Grid.Row="0" TextColor="DarkSlateGray" Text="Amount" Font="10" />
+                <Label Grid.Column="1" Grid.Row="0" TextColor="DarkSlateGray" Text="Duration" Font="10" />
+                <Label Grid.Column="2" Grid.Row="0" TextColor="DarkSlateGray" Text="Interest" Font="10" />
 
                 <Label Grid.Column="0" Grid.Row="1" TextColor="Black" Text="{Binding LoanAmount}" Font="Bold,10" />
                 <Label Grid.Column="1" Grid.Row="1" TextColor="Black" Text="{Binding LoanTermMonths}" Font="Bold,10" />
                 <Label Grid.Column="2" Grid.Row="1" TextColor="Black" Text="{Binding InterestRate}" Font="Bold,10" />
 
-                <Label Grid.Column="0" Grid.Row="2" TextColor="Black" Text="Montly Payment" Font="10" />
-                <Label Grid.Column="1" Grid.Row="2" TextColor="Black" Text="Total Payment" Font="10" />
-                <Label Grid.Column="2" Grid.Row="2" TextColor="Black" Text="Total Interest" Font="10" />
+                <Label Grid.Column="0" Grid.Row="2" TextColor="DarkSlateGray" Text="Montly Payment" Font="10" />
+                <Label Grid.Column="1" Grid.Row="2" TextColor="DarkSlateGray" Text="Total Payment" Font="10" />
+                <Label Grid.Column="2" Grid.Row="2" TextColor="DarkSlateGray" Text="Total Interest" Font="10" />
 
                 <Label Grid.Column="0" Grid.Row="3" TextColor="Black" Text="{Binding MonthlyPayment}" Font="Bold,10" />
                 <Label Grid.Column="1" Grid.Row="3" TextColor="Black" Text="{Binding TotalPayment}" Font="Bold,10" />
@@ -45,13 +45,11 @@
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-                <Label Grid.Column="0" Text="MONTH" TextColor="Black" Font="Bold,11" />
-                <Label Grid.Column="1" Text="INTEREST" TextColor="Black" Font="Bold,11" />
-                <Label  Grid.Column="2" Text="PRINCIPAL" TextColor="Black" Font="Bold,11"/>
-                <Label  Grid.Column="3" Text="BALANCE" TextColor="Black" Font="Bold,11"/>
+                <Label Grid.Column="0" Text="MONTH" TextColor="DarkSlateGray" Font="11" />
+                <Label Grid.Column="1" Text="INTEREST" TextColor="DarkSlateGray" Font="11" />
+                <Label  Grid.Column="2" Text="PRINCIPAL" TextColor="DarkSlateGray" Font="11"/>
+                <Label  Grid.Column="3" Text="BALANCE" TextColor="DarkSlateGray" Font="11"/>
             </Grid>
             <ListView x:Name="listView" ItemsSource="{Binding AmortizationDetails}">
                 <ListView.ItemTemplate>
